@@ -1,11 +1,12 @@
 'use strict';
 
-const TOKEN = process.env.TOKEN;
 const Telegram = require('telegram-node-bot');
+const PersistentMemoryStorage = require('./adapters/PersistentMemoryStorage');
 const TextCommand = Telegram.TextCommand;
 const TodoController = require('./controllers/todo');
 const OtherwiseController = require('./controllers/otherwise');
-const PersistentMemoryStorage = require('./adapters/PersistentMemoryStorage');
+const TOKEN = process.env.TOKEN;
+
 
 const storage = new PersistentMemoryStorage(
     `${__dirname}/data/userData.json`,
@@ -25,9 +26,9 @@ tg.router
 
 function exitHandler(exitCode) {
     storage.flush();
-    console.log('flush');
     process.exit(exitCode);
 }
 
 process.on('SIGINT', exitHandler.bind(null, 0));
 process.on('uncauthExeption', exitHandler.bind(null, 1));
+

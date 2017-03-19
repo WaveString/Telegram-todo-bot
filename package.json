@@ -1,17 +1,21 @@
 {
-  "name": "todo-telegram-bot",
-  "version": "0.0.1",
-  "description": "ToDo bot",
-  "main": "app.js",
-  "dependencies": {
-    "localenv": "^0.2.2",
-    "telegram-node-bot": "^4.0.5"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "author": "Eugene Khmelev",
-  "license": "MIT"
+    "name": "todo-telegram-bot",
+    "version": "0.0.1",
+    "description": "ToDo bot",
+    "main": "app.js",
+    "engines": {
+        "node": "7.0.0",
+        "npm": "3.8.9"
+    },
+    "dependencies": {
+        "localenv": "^0.2.2",
+        "telegram-node-bot": "^4.0.5"
+    },
+    "devDependencies": {},
+        "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node app.js"
+    },
+    "author": "Eugene Khmelev",
+    "license": "MIT"
 }
